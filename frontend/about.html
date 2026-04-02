@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – SafeJob AI</title>
+  <meta name="description" content="Learn how SafeJob AI detects fake job offers targeting women using AI-powered keyword analysis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ NAVBAR ════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analyze.html">Analyze</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analyze.html" class="btn btn-primary btn-sm">Try Free →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="analyze.html">Analyze</a>
+    <a href="about.html">About</a>
+    <a href="analyze.html" class="btn btn-primary" style="margin-top:0.5rem">Try Free →</a>
+  </div>
+
+  <!-- ══ ABOUT HERO ═════════════════════════════════════════ -->
+  <section class="about-hero">
+    <div class="badge badge-primary" style="margin-bottom:1.25rem">About SafeJob AI</div>
+    <h1>Built to <span class="gradient-text">protect women</span><br>from job scams</h1>
+    <p>Employment fraud targeting women is rising. SafeJob AI fights back — using keyword-based AI to identify fake job offers before they cause financial and emotional harm.</p>
+  </section>
+
+  <!-- ══ THE PROBLEM ════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="about-problem-grid">
+
+        <div class="about-text-block">
+          <div class="badge badge-primary" style="margin-bottom:1rem">The Problem</div>
+          <h2>Job scams are <span class="gradient-text">targeting women</span></h2>
+          <p>Fraudsters post fake job offers with unrealistic salaries, demand registration fees, request personal photos, and exploit desperate job seekers. Women looking for work-from-home roles are disproportionately targeted.</p>
+          <p style="margin-top:1rem">These scams cause financial loss, emotional trauma, and in extreme cases, trafficking. Spotting the signs is hard when you urgently need income — SafeJob AI makes it easier.</p>
+          <div class="problem-stats">
+            <div class="problem-stat">
+              <strong>70%</strong>
+              <span>of job scam victims are women</span>
+            </div>
+            <div class="problem-stat">
+              <strong>₹15K+</strong>
+              <span>average financial loss per victim</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-warning-list">
+          <h3>🚨 Common Red Flags We Detect</h3>
+          <ul class="red-flag-list">
+            <li>
+              <span class="rf-icon">💸</span>
+              <div>
+                <strong>Fake Fees</strong>
+                <p>Registration fees, training fees, or "security deposits" demanded before you're officially hired.</p>
+              </div>
+            </li>
+            <li>
+              <span class="rf-icon">📸</span>
+              <div>
+                <strong>Photo Requests</strong>
+                <p>"Send your photo to confirm your application" is a major red flag for exploitation or trafficking.</p>
+              </div>
+            </li>
+            <li>
+              <span class="rf-icon">⚡</span>
+              <div>
+                <strong>Urgency Pressure</strong>
+                <p>"Act now", "Limited seats", "Offer expires today" — pressure tactics to stop you from thinking clearly.</p>
+              </div>
+            </li>
+            <li>
+              <span class="rf-icon">💰</span>
+              <div>
+                <strong>Unrealistic Promises</strong>
+                <p>"Easy money", "Earn lakhs from home", "100% Guaranteed income" — signs of a classic employment scam.</p>
+              </div>
+            </li>
+            <li>
+              <span class="rf-icon">👥</span>
+              <div>
+                <strong>MLM / Pyramid Schemes</strong>
+                <p>"Recruit others", "Network marketing", "Be your own boss" — hidden multi-level scam structures.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS (technical) ══════════════════════════ -->
+  <section class="section" id="how-it-works" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary" style="margin-bottom:1rem">Under The Hood</div>
+        <h2>How SafeJob AI <span class="gradient-text">works</span></h2>
+        <p>A simple but effective pipeline that processes job text through multiple analysis layers.</p>
+      </div>
+      <div class="how-detailed-grid">
+        <div class="how-step-detailed">
+          <div class="how-step-num">1</div>
+          <div class="how-step-content">
+            <h3>Text Input via Frontend</h3>
+            <p>The user pastes a job offer into the textarea. The JavaScript frontend sends it as a POST request with JSON body <code>{ "text": "..." }</code> to the backend.</p>
+          </div>
+        </div>
+        <div class="how-step-detailed">
+          <div class="how-step-num">2</div>
+          <div class="how-step-content">
+            <h3>Flask Backend Receives Request</h3>
+            <p>The Python Flask server at <code>POST /analyze</code> receives the JSON body, validates it, and passes the text to the analysis engine.</p>
+          </div>
+        </div>
+        <div class="how-step-detailed">
+          <div class="how-step-num">3</div>
+          <div class="how-step-content">
+            <h3>Keyword-Based NLP Analysis</h3>
+            <p>The engine scans the text against 50+ weighted suspicious keyword patterns using regex. Each match adds its weight to the total risk score (0–100).</p>
+          </div>
+        </div>
+        <div class="how-step-detailed">
+          <div class="how-step-num">4</div>
+          <div class="how-step-content">
+            <h3>Risk Classification</h3>
+            <p>Scores 0–30 = Low / "genuine". Scores 31–60 = Medium / "fake". Scores 61+ = High / "fake". The response includes <code>risk_score</code>, <code>classification</code>, and <code>flagged_keywords</code>.</p>
+          </div>
+        </div>
+        <div class="how-step-detailed">
+          <div class="how-step-num">5</div>
+          <div class="how-step-content">
+            <h3>Stored in Supabase</h3>
+            <p>Every scan is saved to the <code>job_scans</code> table in Supabase with the text, result, score, and timestamp for analysis and tracking scam trends.</p>
+          </div>
+        </div>
+        <div class="how-step-detailed">
+          <div class="how-step-num">6</div>
+          <div class="how-step-content">
+            <h3>Results Displayed</h3>
+            <p>The frontend renders the animated SVG risk ring, keyword tags, highlighted text, warning message, and safety tips based on the API response.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ════════════════════════════════════════════════ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is SafeJob AI free to use?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">Yes, SafeJob AI is completely free. There are no hidden fees, subscriptions, or account required.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is my data private? Do you store what I paste?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">We store the scanned text and result in Supabase to improve detection accuracy. Do not paste sensitive personal information like Aadhaar numbers, PAN, or bank details.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How accurate is the detection?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">Detection is keyword-based and works best on text that directly contains known scam phrases. It may not catch every sophisticated scam. Always use your own judgment and verify companies independently before proceeding.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What should I do if a job is flagged as HIGH RISK?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">Do NOT respond, share personal information, or make any payments. Report the offer to cybercrime.gov.in or call 1930. Block the sender immediately and alert others in your network.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I report a scam job offer?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">Yes — visit cybercrime.gov.in to file a formal complaint. You can also call the National Cyber Crime Helpline at 1930 (available 24/7). The NCW helpline is 7827170170.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Why is my legitimate job offer flagged as suspicious?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">Some common phrases like "work from home" or "no experience required" appear in both real and fake offers and carry a small weight. If only a few low-weight keywords are detected and the risk score is still low, the offer is likely genuine. Always cross-check independently.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ REPORT A SCAM ══════════════════════════════════════ -->
+  <section class="section" id="report">
+    <div class="container">
+      <div class="card report-card">
+        <div class="report-icon">🚨</div>
+        <h2>Received a Suspicious Job Offer?</h2>
+        <p>If you've received a scam offer or been victimized, report it immediately to protect yourself and others.</p>
+        <div class="report-links">
+          <a href="https://cybercrime.gov.in" target="_blank" class="btn btn-primary">
+            Report on cybercrime.gov.in
+          </a>
+          <a href="tel:1930" class="btn btn-outline">
+            📞 Call Helpline: 1930
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ════════════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-glow"></div>
+        <h2>Ready to check your job offer?</h2>
+        <p>Free, instant, no account required.</p>
+        <a href="analyze.html" class="btn btn-primary btn-lg" style="margin-top:2rem;position:relative;z-index:1">
+          🔍 Analyze Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+          </a>
+          <p>AI-powered protection against fake job offers targeting women.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyze.html">Analyze</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>On This Page</h4>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#report">Report a Scam</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Emergency</h4>
+          <ul>
+            <li><a href="tel:1930">Cyber Helpline: 1930</a></li>
+            <li><a href="tel:7827170170">NCW: 7827170170</a></li>
+            <li><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SafeJob AI · Built to protect women from employment fraud.</p>
+        <p>🛡️ Empowering women through technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeJob AI – Detect Fake Job Offers Targeting Women</title>
+  <meta name="description" content="AI-powered tool to detect fake job offers and employment scams targeting women. Instant risk scoring with keyword detection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ NAVBAR ═══════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="analyze.html">Analyze</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analyze.html" class="btn btn-primary btn-sm">Try Free →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="analyze.html">Analyze</a>
+    <a href="about.html">About</a>
+    <a href="analyze.html" class="btn btn-primary" style="margin-top:0.5rem">Try Free →</a>
+  </div>
+
+  <!-- ══ HERO ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-grid">
+
+      <!-- Left: text content -->
+      <div class="hero-content">
+        <div class="badge badge-primary">🤖 AI-Powered Job Scam Detection</div>
+        <h1 class="hero-title">
+          Protect Yourself from<br>
+          <span class="gradient-text">Fake Job Offers</span>
+        </h1>
+        <p class="hero-desc">
+          SafeJob AI analyzes job descriptions, emails, and messages for employment scam indicators targeting women — in under a second.
+        </p>
+        <div class="hero-actions">
+          <a href="analyze.html" class="btn btn-primary btn-lg">🔍 Analyze a Job Offer</a>
+          <a href="about.html"   class="btn btn-outline  btn-lg">Learn How It Works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>50+</strong><span>Scam Patterns</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><strong>3</strong><span>Risk Levels</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><strong>Free</strong><span>Always</span></div>
+        </div>
+      </div>
+
+      <!-- Right: floating mock result card -->
+      <div class="hero-visual">
+        <div class="mock-card">
+          <div class="mock-card-header">
+            <span class="mock-title">Risk Assessment</span>
+            <span class="mock-badge-high">HIGH RISK</span>
+          </div>
+          <div class="mock-score-section">
+            <div class="mock-ring-wrapper">
+              <svg viewBox="0 0 120 120" class="mock-ring-svg">
+                <circle cx="60" cy="60" r="50" class="mock-ring-bg"/>
+                <circle cx="60" cy="60" r="50" class="mock-ring-fill mock-ring-high"/>
+              </svg>
+              <div class="mock-score-text">
+                <span>78</span>
+                <small>/100</small>
+              </div>
+            </div>
+            <div>
+              <div class="mock-classification">⚠ Likely Fraudulent</div>
+              <div class="mock-bar-wrap">
+                <div class="mock-bar">
+                  <div class="mock-bar-fill mock-bar-high"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mock-keywords-label">🚩 Flagged Patterns</div>
+          <div class="mock-keywords">
+            <span class="mock-kw">registration fee</span>
+            <span class="mock-kw">easy money</span>
+            <span class="mock-kw">urgent hiring</span>
+            <span class="mock-kw">send photos</span>
+          </div>
+        </div>
+        <div class="mock-card-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FEATURES ═══════════════════════════════════════════ -->
+  <section class="features-section section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary" style="margin-bottom:1rem">Why SafeJob AI</div>
+        <h2>Everything you need to stay <span class="gradient-text">safe</span></h2>
+        <p>Intelligent detection built specifically to protect women from employment fraud.</p>
+      </div>
+      <div class="features-grid">
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">🎯</div>
+          <h3>Smart Keyword Detection</h3>
+          <p>50+ weighted scam patterns — from fake fees to photo requests — identified instantly in any job text.</p>
+        </a>
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get a full risk assessment in under one second. No signup, no delays — just paste the text and go.</p>
+        </a>
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">🔢</div>
+          <h3>0–100 Risk Score</h3>
+          <p>Precise numeric scoring with clear Low / Medium / High levels and an animated visual indicator.</p>
+        </a>
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">🚩</div>
+          <h3>Keyword Highlighting</h3>
+          <p>Every suspicious phrase is individually flagged so you know exactly what triggered the alert.</p>
+        </a>
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">💡</div>
+          <h3>Safety Guidance</h3>
+          <p>Tailored safety tips for your specific risk level — actionable advice, not just a number.</p>
+        </a>
+        <a href="analyze.html" class="feature-card card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="feature-icon">📊</div>
+          <h3>Scan History</h3>
+          <p>Every scan is securely stored in Supabase, helping improve detection and track emerging scam trends.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-primary" style="margin-bottom:1rem">Simple Process</div>
+        <h2>How it <span class="gradient-text">works</span></h2>
+        <p>Three steps to know if a job offer is safe or a scam.</p>
+      </div>
+      <div class="steps-grid">
+        <a href="analyze.html" class="step-card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="step-number">STEP 01</div>
+          <div class="step-icon">📋</div>
+          <h3>Paste Job Text</h3>
+          <p>Copy any job offer, email, or message you received and paste it into the analyzer.</p>
+        </a>
+        <a href="analyze.html" class="step-card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="step-number">STEP 02</div>
+          <div class="step-icon">🤖</div>
+          <h3>AI Analyzes Text</h3>
+          <p>The backend scans for 50+ known scam patterns and calculates a 0–100 weighted risk score.</p>
+        </a>
+        <a href="analyze.html" class="step-card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="step-number">STEP 03</div>
+          <div class="step-icon">🛡️</div>
+          <h3>See Your Report</h3>
+          <p>Get flagged keywords, your risk level, a warning message, and actionable safety recommendations.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS ═══════════════════════════════════════════════ -->
+  <div class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Scam Patterns</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-number">&lt;1s</div>
+          <div class="stat-label">Analysis Time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💸</div>
+          <div class="stat-number">Free</div>
+          <div class="stat-label">Always Free</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌐</div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Always Available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CTA ════════════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-glow"></div>
+        <div class="badge badge-primary" style="margin-bottom:1.25rem;position:relative;z-index:1">Ready to Stay Safe?</div>
+        <h2>Check your job offer <span class="gradient-text">right now</span></h2>
+        <p>Free, instant, and no account required. Protect yourself in seconds.</p>
+        <a href="analyze.html" class="btn btn-primary btn-lg" style="margin-top:2rem;position:relative;z-index:1">
+          🔍 Start Analyzing — It's Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+          </a>
+          <p>AI-powered protection against fake job offers targeting women. Stay informed, stay safe.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyze.html">Analyze</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="about.html#how-it-works">How It Works</a></li>
+            <li><a href="about.html#faq">FAQ</a></li>
+            <li><a href="about.html#report">Report a Scam</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Emergency</h4>
+          <ul>
+            <li><a href="tel:1930">Cyber Helpline: 1930</a></li>
+            <li><a href="tel:7827170170">NCW: 7827170170</a></li>
+            <li><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SafeJob AI · Built to protect women from employment fraud.</p>
+        <p>🛡️ Empowering women through technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

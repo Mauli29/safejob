@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyze Job Offer – SafeJob AI</title>
+  <meta name="description" content="Paste a job offer, email, or message to instantly detect if it is a scam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ NAVBAR ════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="analyze.html" class="active">Analyze</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="analyze.html" class="btn btn-primary btn-sm">Try Free →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="analyze.html">Analyze</a>
+    <a href="about.html">About</a>
+    <a href="analyze.html" class="btn btn-primary" style="margin-top:0.5rem">Try Free →</a>
+  </div>
+
+  <!-- ══ PAGE HEADER ════════════════════════════════════════ -->
+  <div class="page-header">
+    <div class="container">
+      <div class="page-header-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Analyze</span>
+          </div>
+          <h1 class="page-title">Job Offer <span class="gradient-text">Analyzer</span></h1>
+          <p class="page-desc">Paste any job offer, email, or message to check for scam indicators.</p>
+        </div>
+        <div class="page-header-tip">
+          <span>💡</span>
+          <span>Tip: Use the "Try Example" button to see a demo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MAIN ANALYZER ══════════════════════════════════════ -->
+  <main class="analyzer-main">
+    <div class="container analyzer-container">
+
+      <!-- ── Input Card ──────────────────────────────────── -->
+      <div class="card" id="analyzerCard">
+        <div class="analyzer-card-header">
+          <h2><span class="card-icon">📋</span> Paste Job Text Here</h2>
+          <p>Include the full job offer, email body, or message for the most accurate results.</p>
+        </div>
+
+        <div class="textarea-wrapper">
+          <textarea
+            id="jobText"
+            placeholder="Paste the job offer, email, or WhatsApp message you received here…
+
+Example: 'URGENT HIRING! Work from home and earn easy money. No experience needed. Pay ₹500 registration fee to get started...'"
+            rows="10"
+            maxlength="5000"
+            spellcheck="false"
+          ></textarea>
+          <div class="textarea-footer">
+            <span class="char-count" id="charCount">0 / 5000 characters</span>
+            <button class="btn btn-ghost btn-sm" id="exampleBtn">📝 Try Example</button>
+          </div>
+        </div>
+
+        <div class="analyzer-actions">
+          <button class="btn btn-primary" id="analyzeBtn" style="flex:1; padding:0.9rem 1.5rem; font-size:1rem;">
+            <span>🔍</span>
+            <span class="btn-label">Analyze Job Offer</span>
+          </button>
+          <button class="btn btn-outline" id="clearBtn" style="padding:0.9rem 1.25rem;">
+            🗑️ Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Results Card (hidden until analysis) ─────────── -->
+      <div class="card results-card" id="resultsCard" style="display:none;">
+
+        <!-- LOADING STATE -->
+        <div class="loading-state" id="loadingState" style="display:none;">
+          <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring spinner-ring-2"></div>
+          </div>
+          <h3>Analyzing job offer…</h3>
+          <p>Scanning for suspicious patterns</p>
+          <div class="loading-steps">
+            <div class="loading-step" id="step1">📥 Reading job text</div>
+            <div class="loading-step" id="step2">🔍 Checking for scam patterns</div>
+            <div class="loading-step" id="step3">📊 Calculating risk score</div>
+            <div class="loading-step" id="step4">✅ Generating your report</div>
+          </div>
+        </div>
+
+        <!-- RESULT CONTENT (hidden until loading completes) -->
+        <div id="resultContent" style="display:none;">
+
+          <!-- ① Score Section -->
+          <div class="result-section">
+            <div class="section-label">📊 Risk Assessment</div>
+            <div class="score-layout">
+              <div class="score-ring-wrapper">
+                <svg viewBox="0 0 120 120" class="score-ring-svg">
+                  <circle cx="60" cy="60" r="50" class="ring-track"/>
+                  <circle cx="60" cy="60" r="50" class="ring-progress" id="ringProgress"/>
+                </svg>
+                <div class="score-center" id="scoreCenter">
+                  <span class="score-num" id="scoreNum">0</span>
+                  <small class="score-denom">/100</small>
+                </div>
+              </div>
+              <div class="score-meta">
+                <div class="risk-badge-large" id="riskBadgeLarge">— RISK</div>
+                <div class="classification-text" id="classificationText">Analyzing…</div>
+                <div class="risk-bar-wrap">
+                  <div class="risk-bar">
+                    <div class="risk-bar-fill" id="riskBarFill"></div>
+                  </div>
+                  <div class="risk-bar-labels">
+                    <span>Low (0–30)</span>
+                    <span>Medium</span>
+                    <span>High (60+)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <!-- ② Warning Message -->
+          <div id="warningSection" class="warning-section low">
+            <div class="warning-icon" id="warningIcon">✅</div>
+            <div>
+              <div class="warning-title" id="warningTitle">Looks Safe</div>
+              <div class="warning-message" id="warningMessage"></div>
+            </div>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <!-- ③ Suspicious Keywords -->
+          <div class="result-section">
+            <div class="section-label">
+              🚩 Suspicious Patterns Detected
+              <span class="keyword-count" id="keywordCount">0 found</span>
+            </div>
+            <div class="keywords-grid" id="keywordsGrid"></div>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <!-- ④ Highlighted Text (collapsible) -->
+          <div class="result-section">
+            <div class="section-label-row">
+              <span class="section-label" style="margin-bottom:0;">📄 Highlighted Analysis</span>
+              <button class="btn btn-ghost btn-sm" id="toggleHighlight">Show ↓</button>
+            </div>
+            <div class="highlighted-text" id="highlightedText" style="display:none;"></div>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <!-- ⑤ Safety Recommendations -->
+          <div class="result-section">
+            <div class="section-label">🔒 Safety Recommendations</div>
+            <ul class="safety-tips" id="safetyTips"></ul>
+          </div>
+
+          <!-- ⑥ Action Buttons -->
+          <div class="result-actions" style="flex-wrap: wrap; gap: 1rem;">
+            <button class="btn btn-outline" id="newScanBtn">🔄 New Scan</button>
+            <button class="btn btn-primary" id="copyResultBtn">📋 Copy Report</button>
+            <button class="btn" id="downloadPdfBtn" style="background: var(--text-main); color: var(--bg-main); border: none;">📄 Download PDF</button>
+          </div>
+
+        </div><!-- /resultContent -->
+      </div><!-- /resultsCard -->
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+  <footer class="footer" style="margin-top:4rem">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-icon">🛡️</span>SafeJob<span class="logo-ai">AI</span>
+          </a>
+          <p>AI-powered protection against fake job offers targeting women.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyze.html">Analyze</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Emergency</h4>
+          <ul>
+            <li><a href="tel:1930">Cyber Helpline: 1930</a></li>
+            <li><a href="tel:7827170170">NCW: 7827170170</a></li>
+            <li><a href="tel:9152987821">iCall: 9152987821</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Report</h4>
+          <ul>
+            <li><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a></li>
+            <li><a href="about.html#report">How to Report</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SafeJob AI · Built to protect women from employment fraud.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
